@@ -1,0 +1,43 @@
+# This is the sshd server system-wide configuration file. See sshd_config(5).
+
+# Port number on which the SSH daemon listens
+Port 22
+
+# AddressFamily can be any of "any", "inet" (IPv4), or "inet6" (IPv6)
+# AddressFamily any
+
+# Listen on specific addresses
+# ListenAddress 0.0.0.0
+# ListenAddress ::
+
+# The default user login grace time (in seconds)
+LoginGraceTime 2m
+
+# Maximum number of authentication attempts allowed
+MaxAuthTries 6
+
+# Enable public key authentication
+PubkeyAuthentication yes
+
+# Password authentication (set to 'no' for key-based auth only)
+PasswordAuthentication yes
+
+# Permit root login
+PermitRootLogin prohibit-password
+
+# Allow only certain users to log in
+# AllowUsers your-username
+
+# Use privilege separation (improves security)
+UsePAM yes
+
+# Enable X11 forwarding
+X11Forwarding yes
+X11DisplayOffset 10
+
+# Set the default umask for new files
+# This can be overridden in ~/.ssh/environment
+PermitUserEnvironment no
+
+# Logs for troubleshooting
+LogLevel INFO
